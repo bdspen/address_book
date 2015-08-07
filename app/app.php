@@ -19,6 +19,13 @@
 //root or homepage route
     $app->get("/", function() use ($app) {
         return $app['twig']->render('contacts.html.twig',
-        array('' => ))
-    })
+        array('contacts' => Contact::getAll()));
+    });
+
+    $app->post("/contacts", function() use ($app) {
+        $contact = new Car($POST['create_name'], $_POST['create_phone'],
+        $_POST['create_address']);
+        $contact->save();
+        return $app['twig']->render('contacts.html.twig', array ('new_contact => $contact'));
+    });
  ?>

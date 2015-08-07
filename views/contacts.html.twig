@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Contacts</title>
+
+    </head>
+    <body>
+        <h1>Your Contacts</h1>
+
+
+        {% if contacts is not empty %}
+            <p> Here are all of your contacts:</p>
+            <ul>
+                {% for contact in contacts %}
+                    <li>{{ contact.getContact}} //contact leads to POST then it saves()
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form id="create_name" name= "create_name" action="/contacts" method="post">
+            <input type="text" name="create_name" id="create_name">
+        </form>
+        <form id="create_phone" name= "create_phone" action="/contacts" method="post">
+            <input type="text" name="create_phone" id="create_phone">
+        </form>
+        <form id="create_address" name= "create_address"action="/contacts" method="post">
+            <input type="text" name="create_address" id="creeate_address">
+        </form>
+
+
+        //form with only a clear button
+        //press button: user is taken to /delete_contacts confirm page
+
+    </body>
+</html>
