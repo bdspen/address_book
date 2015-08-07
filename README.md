@@ -1,8 +1,8 @@
-# _{Address Book}_
+# Address Book
 
-##### _{An app that allows you to store contact info}, {8/7/15}_
+##### An app that allows you to store contact info}, {8/7/15}
 
-#### By _**{Benjamin Spenard}**_
+#### By **Benjamin Spenard**
 
 ## Description
 
