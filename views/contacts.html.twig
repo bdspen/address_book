@@ -4,7 +4,7 @@
 
     </head>
     <body>
-        <h1>Your Contacts</h1>
+        <h1>Your Contacts:</h1>
 
 
         {% if contacts is not empty %}
@@ -16,6 +16,8 @@
             </ul>
         {% endif %}
 
+<!--create contact-->
+
         <form id="create_name" name= "create_name" action="/contacts" method="post">
             <input type="text" name="create_name" id="create_name">
         </form>
@@ -25,9 +27,13 @@
         <form id="create_address" name= "create_address"action="/contacts" method="post">
             <input type="text" name="create_address" id="creeate_address">
         </form>
+        
 
+<!--delete button -->
 
-        //form with only a clear button
+        <form id="delete" name="delete" action="/delete_contacts" method="post">
+            <button name="delete">Clear ALL Contacts</button>
+        </form>
         //press button: user is taken to /delete_contacts confirm page
 
     </body>
