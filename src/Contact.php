@@ -12,7 +12,7 @@
             $this->phone = $phone;
             $this->address = $address;
         }
-//setters & getters here
+//setters & getters here----------------------------------
 //name
         function setName($new_name)
         {
@@ -40,6 +40,8 @@
         {
             return $this->address;
         }
+//end setters & getters-------------------------------------
+
 //save function
         function save()
         {

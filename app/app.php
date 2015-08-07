@@ -17,10 +17,13 @@
     ));
 
 //root or homepage route
+
     $app->get("/", function() use ($app) {
         return $app['twig']->render('contacts.html.twig',
         array('contacts' => Contact::getAll()));
     });
+
+//saves a new contact and routes the user to /create_contact
 
     $app->post("/create_contact", function() use ($app) {
         $contact = new Contact($_POST['create_name'], $_POST['create_phone'],
@@ -29,6 +32,8 @@
         return $app['twig']->render('create_contact.html.twig',
         array ('contacts' => Contact::getAll()));
     });
+
+//deletes ALL contacts and routes user to /delete_contacts
 
     $app->post('/delete_contacts', function() use ($app) {
         Contact::deleteAll();

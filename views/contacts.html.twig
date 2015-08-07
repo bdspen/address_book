@@ -6,22 +6,24 @@
     <body>
         <h1>Your Contacts:</h1>
 
+<!-- lists all contacts -->
 
         {% if contacts is empty %}
-            <h1>No contacts found...</h1>
+            <h2>No contacts found... Add contacts below!</h2>
 
             {% else %}
-            <p> Here are all of your contacts:</p>
+            <h3> Here are all of your contacts:</h3>
             <ul>
                 {% for contact in contacts %}
                 <li>Name: {{ contact.getName }}</li>
                 <li>Phone Number: {{ contact.getPhone }}</li>
                 <li>Address: {{ contact.getAddress }}</li>
+                <br>
                 {% endfor %}
             </ul>
         {% endif %}
 
-<!--create contact-->
+<!--create contact form-->
 
         <form id="create_contact" name= "create_contact" action="/create_contact" method="post">
 

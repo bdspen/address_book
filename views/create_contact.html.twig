@@ -4,13 +4,13 @@
     </head>
     <body>
         <h1>You created an new contact!</h1>
-            {% for contact in contacts %}
 
-        <p>{{ contact.getcreate_name }}</p>
-
-            {% endfor %}
-
-
-        <a href="/">Home</a>
+                {% for contact in contacts %}
+                <li>Name: {{ contact.getName }}</li>
+                <li>Phone Number: {{ contact.getPhone }}</li>
+                <li>Address: {{ contact.getAddress }}</li>
+                {% endfor %}
+                <br>
+        <a href="/">Click here to see your contact list or to add a new contact</a>
     </body>
 </html>
