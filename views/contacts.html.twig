@@ -7,34 +7,42 @@
         <h1>Your Contacts:</h1>
 
 
-        {% if contacts is not empty %}
+        {% if contacts is empty %}
+            <h1>No contacts found...</h1>
+
+            {% else %}
             <p> Here are all of your contacts:</p>
             <ul>
                 {% for contact in contacts %}
-                    <li>{{ contact.getContact}} //contact leads to POST then it saves()
+                <li>Name: {{ contact.getName }}</li>
+                <li>Phone Number: {{ contact.getPhone }}</li>
+                <li>Address: {{ contact.getAddress }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
 
 <!--create contact-->
 
-        <form id="create_name" name= "create_name" action="/contacts" method="post">
+        <form id="create_contact" name= "create_contact" action="/create_contact" method="post">
+
+            <label for="create_name">Name</label>
             <input type="text" name="create_name" id="create_name">
-        </form>
-        <form id="create_phone" name= "create_phone" action="/contacts" method="post">
+
+            <label for="create_phone">Phone Number</label>
             <input type="text" name="create_phone" id="create_phone">
-        </form>
-        <form id="create_address" name= "create_address"action="/contacts" method="post">
+
+            <label for="create_address">Address</label>
             <input type="text" name="create_address" id="creeate_address">
+
+            <button name="submit">Submit</button>
         </form>
-        
+
 
 <!--delete button -->
 
         <form id="delete" name="delete" action="/delete_contacts" method="post">
             <button name="delete">Clear ALL Contacts</button>
         </form>
-        //press button: user is taken to /delete_contacts confirm page
 
     </body>
 </html>

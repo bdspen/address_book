@@ -4,9 +4,11 @@
     </head>
     <body>
         <h1>You created an new contact!</h1>
+            {% for contact in contacts %}
 
+        <p>{{ contact.getcreate_name }}</p>
 
-        <p>{{ new_contact.getContact }}</p>
+            {% endfor %}
 
 
         <a href="/">Home</a>

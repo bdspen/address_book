@@ -43,17 +43,17 @@
 //save function
         function save()
         {
-            array_push($_SESSION['contact_info'], $this);
+            array_push($_SESSION['list_of_contacts'], $this);
         }
 //getAll function
         static function getAll()
         {
-            return $_SESSION['contact_info'];
+            return $_SESSION['list_of_contacts'];
         }
 //deleteAll function
         static function deleteAll()
         {
-            $_SESSION['contact_info'] = array();
+            $_SESSION['list_of_contacts'] = array();
         }
 
     }

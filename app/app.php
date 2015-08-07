@@ -4,10 +4,10 @@
 
     session_start();
 
-//creates 'contact_info' array if SESSION is empty
+//creates 'list_of_contacts' array if SESSION is empty
 
-    if (empty($_SESSION['contact_info'])) {
-        $_SESSION['contact_info'] = array();
+    if (empty($_SESSION['list_of_contacts'])) {
+        $_SESSION['list_of_contacts'] = array();
     }
 
     $app = new Silex\Application();
@@ -22,11 +22,12 @@
         array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/contacts", function() use ($app) {
-        $contact = new Car($POST['create_name'], $_POST['create_phone'],
+    $app->post("/create_contact", function() use ($app) {
+        $contact = new Contact($_POST['create_name'], $_POST['create_phone'],
         $_POST['create_address']);
         $contact->save();
-        return $app['twig']->render('contacts.html.twig', array ('new_contact => $contact'));
+        return $app['twig']->render('create_contact.html.twig',
+        array ('contacts' => Contact::getAll()));
     });
 
     $app->post('/delete_contacts', function() use ($app) {
